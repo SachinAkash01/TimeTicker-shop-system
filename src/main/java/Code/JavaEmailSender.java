@@ -16,18 +16,18 @@ public class JavaEmailSender {
     private String msgText = new String(); 
 
     final String USER_NAME;  //User name of the Google(gmail) account
-    final String PASSSWORD = "cfqkaytorjrxxakd";  //Password of the Google(gmail) account
-    final String FROM_ADDRESS = "timeticker123@gmail.com";  //From addresss
+    final String PASSSWORD = "yourpassword";  //Password of the Google(gmail) account
+    final String FROM_ADDRESS = "youremail@gmail.com";  //From addresss
 
     public JavaEmailSender() {
         this.msgSubject = new String();
-        this.USER_NAME = "timeticker123@gmail.com";
+        this.USER_NAME = "youremail@gmail.com";
     }
 
     public static void main(String[] args) {
         JavaEmailSender email = new JavaEmailSender();
         //Sending test email
-        email.createAndSendEmail("timeticker123@gmail.com", "Test email subject",
+        email.createAndSendEmail("youremail@gmail.com", "Test email subject",
                 "Congratulations !!! \nThis is test email sent by java class.");
     }
 
@@ -47,8 +47,8 @@ public class JavaEmailSender {
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.ssl.trust", "*");
-        props.put("mail.smtp.user", "timeticker123@gmail.com");
-        props.put("mail.smtp.password", "cfqkaytorjrxxakd");
+        props.put("mail.smtp.user", "youremail@gmail.com");
+        props.put("mail.smtp.password", "yourpassword");
         props.put("mail.smtp.starttls.required", "true");
         props.put("mail.smtp.ssl.protocols", "TLSv1.2");
 
@@ -56,14 +56,14 @@ public class JavaEmailSender {
                 new javax.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
-                return new PasswordAuthentication("timeticker123@gmail.com", "cfqkaytorjrxxakd");
+                return new PasswordAuthentication("youremail@gmail.com", "yourpassword");
             }
         });
 
         try {
 
             Message message = new MimeMessage(session);
-            message.setFrom(new InternetAddress("timeticker123@gmail.com")); //Set from address of the email
+            message.setFrom(new InternetAddress("youremail@gmail.com")); //Set from address of the email
             message.setContent(msgText, "text/html"); //set content type of the email
 
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(email)); //Set email recipient
