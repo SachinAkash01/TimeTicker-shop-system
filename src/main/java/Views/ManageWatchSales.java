@@ -878,7 +878,6 @@ public class ManageWatchSales extends javax.swing.JFrame {
     private javax.swing.JTextField txt_cusname;
     private javax.swing.JTextArea txtbillFill;
     // End of variables declaration//GEN-END:variables
-
     private String WatchType;
     private String PaymentMethod;
     private double PaidAmount = 0.0;
