@@ -726,10 +726,8 @@ public class ManagePartSupplier extends javax.swing.JFrame {
     private javax.swing.JTextField txtSupCompany;
     private javax.swing.JTextField txtTotal;
     // End of variables declaration//GEN-END:variables
-
     private String itemCondition;
     private int Total = 0;
     private int AmountDue = 0;
     private int AmountToPaid = 0;
-
 }
